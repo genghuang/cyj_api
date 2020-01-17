@@ -17,7 +17,7 @@
   "basePath": "/v2",
   "tags": [
     {
-      "name": "XM_Overview_INFO",
+      "name": "Admin_INFO",
       "description": "Everything about your XM_Overview_INFO",
       "externalDocs": {
         "description": "Find out more",
