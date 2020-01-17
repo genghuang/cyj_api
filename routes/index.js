@@ -16,6 +16,15 @@ router.route('/getAdmin')
 		index.getAdmin(username, password, callback);
 	})
 
+/* GET getAdmin. */
+router.route('/getAdmins')
+	.get(function(req, res) {
+		var callback = function(code, message, result) {
+			res.json({code: code, message: message, result: result});
+		}
+		index.getAdmins(callback);
+	})
+
 // /* GET VoyageInfo. */
 // router.route('/getVoyageInfo')
 // 	.get(function(req, res) {

@@ -3,7 +3,7 @@ var app = express();
 var mysql = require('mysql');
 var db = require('../config/db');
 
-/* GET OverviewInfo. */
+/* GET getAdmin. */
 app.getAdmin = function(username, password, callback) {
 	var c = mysql.createConnection(db);
 	var sql = "select * from admin where username = '"+username+"';";
@@ -21,6 +21,25 @@ app.getAdmin = function(username, password, callback) {
 				result = [];
 				callback(code, message, result);
 			}
+		}else {
+			var code = -1;
+			var message = "fail"
+			callback(code, message, result);
+		}
+	});
+	c.end();
+}
+/* GET getAdmins. */
+app.getAdmins = function(callback) {
+	var c = mysql.createConnection(db);
+	var sql = "select * from admin";
+	c.connect();
+	c.query(sql, function(error, result) {
+		if (error) {console.log(error)};
+		if (result != "") {
+			var code = 0;
+			var message = "success";
+			callback(code, message, result);
 		}else {
 			var code = -1;
 			var message = "fail"

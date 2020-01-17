@@ -74,6 +74,37 @@
         }
       }
     },
+    "/getAdmins": {
+      "get": {
+        "tags": [
+          "Admin_INFO"
+        ],
+        "summary": "获取管理员信息",
+        "description": "获取管理员信息",
+        "operationId": "getAdmins",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                
+              }
+            }  
+          }
+        }
+      }
+    },
   },
   "securityDefinitions": {
     "petstore_auth": {
