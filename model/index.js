@@ -36,7 +36,11 @@ app.getAdmins = function(callback) {
 	c.connect();
 	c.query(sql, function(error, result) {
 		if (error) {console.log(error)};
+
 		if (result != "") {
+			for (var i = 0; i < result; i++) {
+				result[i].tags = result[i].tags.split(',');
+			}
 			var code = 0;
 			var message = "success";
 			callback(code, message, result);
